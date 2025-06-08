@@ -7,11 +7,11 @@ This technique requires that you set up reciprical ssh certificates on the two s
 
 Make sure you are signed in using the user that you will use to run the scripts.
 
-# create a key
+### create a key
 ssh-keygen -t rsa -b 4096
-# copy it to the other server using its IP address
+### copy it to the other server using its IP address
 ssh-copy-id sol@__.__.__.__ 
-# test
+### test
 ssh sol@__.__.__.__
 
 Now do the same on the other server.
