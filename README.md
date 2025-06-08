@@ -1,4 +1,4 @@
-#Validator Set Identity Scripts
+# Validator Set Identity Scripts
 These scripts demonstrate how to transition a staked identity from one machine to another without a restart. Using these scripts, a validator software update can be accomplished with virtually no downtime.
 
 This technique requires that you set up reciprical ssh certificates on the two servers where you intend to swap identities.
