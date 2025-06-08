@@ -6,14 +6,14 @@ This technique requires that you set up reciprical ssh certificates on the two s
 ## Set up SSH certificates
 
 Make sure you are signed in using the user that you will use to run the scripts.
-
+```
 ### create a key
 ssh-keygen -t rsa -b 4096
 ### copy it to the other server using its IP address
 ssh-copy-id sol@__.__.__.__ 
 ### test
 ssh sol@__.__.__.__
-
+```
 Now do the same on the other server.
 
 ## Edit the scripts to include your keypairs and server IPs
@@ -23,9 +23,10 @@ Make sure you review the scripts and change the file names of the keypairs and t
 ## Copy the relevant scripts to your servers
 
 Set up the relevant scripts on each server. Each server will have two scripts: one to stake and one to unstack. For example, on the primary server, you will have:
+```
 switch_primary_to_unstaked_identity.sh
 switch_primary_to_staked_identity.sh
-
+```
 ## Switch Identities
 
 To switch the identity key on the server that currently contains the staked identity, run:
