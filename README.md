@@ -40,3 +40,6 @@ bash switch_backup_to_staked_identity.sh
 When you are prompted with "Are you sure you want to proceed?", return to the primary server and enter "Y".  When it completes, enter "Y" on the backup server.
 
 Done with very few votes missed....
+
+## Note
+These could be consolidated down to one script, but I have created seperate scripts so that, once installed, they can be used with fewer opportunity for error.
