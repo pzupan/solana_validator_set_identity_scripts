@@ -50,13 +50,13 @@ switch_primary_to_staked_identity.sh
 ## Switch Identities
 
 To switch the identity key on the server that currently contains the staked identity, run:
-
+```
 bash switch_primary_to_unstaked_identity.sh
-
+```
 When you are prompted with "Are you sure you want to proceed?", wait and run the opposite script on the backup server.
-
+```
 bash switch_backup_to_staked_identity.sh
-
+```
 When you are prompted with "Are you sure you want to proceed?", return to the primary server and enter "Y".  When it completes, enter "Y" on the backup server.
 
 Done with very few votes missed....
