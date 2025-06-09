@@ -24,8 +24,6 @@ solana-keygen new -s --no-bip39-passphrase -o mainnet-validator-unstaked-2-keypa
 ```
 Create the first on the primary server and the second on the backup.
 
-## Edit the scripts to include your keypairs and server IPs
-Make sure you review the scripts and change the file names of the keypairs, provide the relevant IP addresses, and confirm the name of your config file.
 
 ## Create Identity Symlinks
 An important part of how these scripts function is the identity.json symbolic link. This link allows a soft link to the desired identity so that the validator can restart or stop/start after we have switched identities.
@@ -38,6 +36,9 @@ On your inactive, non-voting validator, link this to your unstaked "junk" identi
 ```
 ln -sf /home/sol/keys/mainnet-validator-unstaked-2-keypair.json /home/sol/keys/mainnet-identity.json
 ```
+
+## Edit the scripts to include your keypairs and server IPs
+Make sure you review the scripts and change the file names of the keypairs, provide the relevant IP addresses, and confirm the name of your config file.
 
 ## Copy the relevant scripts to your servers
 
