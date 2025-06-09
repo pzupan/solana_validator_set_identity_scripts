@@ -17,8 +17,25 @@ ssh sol@__.__.__.__
 Now do the same on the other server.
 
 ## Edit the scripts to include your keypairs and server IPs
+Make sure you review the scripts and change the file names of the keypairs, provide the relevant IP addresses, and confirm the name of your config file.
 
-Make sure you review the scripts and change the file names of the keypairs and the relevant IP addresses.
+## Create two junk keys
+Create two junk keys that will be used on the servers when they are unstaked.  Each server needs a seperate junk key as even though the switch happens quickly, you can't have two validators with the same identity running at the same time.  This will cause both nodes to restart if the junk key is the same.
+```
+solana-keygen new -s --no-bip39-passphrase -o mainnet-validator-unstaked-1-keypair.json
+solana-keygen new -s --no-bip39-passphrase -o mainnet-validator-unstaked-2-keypair.json
+```
+## Create Identity Symlinks
+An important part of how these scripts function is the identity.json symbolic link. This link allows a soft link to the desired identity so that the validator can restart or stop/start after we have switched identities.
+
+On your actively voting validator, link this to your staked identity
+```
+ln -sf /home/sol/keys/mainnet-validator-identity.json /home/sol/keys/mainnet-identity.json
+```
+On your inactive, non-voting validator, link this to your unstaked "junk" identity
+```
+ln -sf /home/sol/keys/mainnet-validator-unstaked-2-keypair.json /home/sol/keys/mainnet-identity.json
+```
 
 ## Copy the relevant scripts to your servers
 
